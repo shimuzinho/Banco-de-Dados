@@ -8,11 +8,11 @@ export default function ReadPessoas() {
   useEffect(() => {
     const fetchPessoas = async () => {
       try {
-        const response = await fetch('http://localhost:5000/matriculas');
+        const response = await fetch('http://localhost:5000/pessoas');
         const data = await response.json();
         setPessoas(data);
       } catch (error) {
-        console.error('Erro ao buscar as matrículas:', error);
+        console.error('Erro ao buscar os registro de pessoas:', error);
       }
     };
 
@@ -21,18 +21,18 @@ export default function ReadPessoas() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/matriculas/${id}`, {
+      const response = await fetch(`http://localhost:5000/pessoas/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
 
         setPessoas(pessoas.filter((el) => el._id !== id));
-        alert('Pessoa excluída com sucesso!');
+        alert('Registro excluída com sucesso!');
       } else {
-        alert('Erro ao excluir pessoa.');
+        alert('Erro ao excluir registro.');
       }
     } catch (error) {
-      console.error('Erro ao excluir pessoa:', error);
+      console.error('Erro ao excluir registro:', error);
     }
   };
 

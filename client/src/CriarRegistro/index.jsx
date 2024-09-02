@@ -17,7 +17,7 @@ export default function CreatePessoa() {
     console.log(novoRegistro)
 
     try {
-      const response = await fetch('http://localhost:5000/matriculas', {
+      const response = await fetch('http://localhost:5000/pessoas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,11 +8,6 @@ body{
     font-style: normal;
     margin: 0;
     padding: 0;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   
@@ -52,7 +47,7 @@ body {
   
   .form-container button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #000000b7;
     color: white;
     border: none;
     border-radius: 4px;
@@ -62,7 +57,9 @@ body {
   }
   
   .form-container button:hover {
-    background-color: #0056b3;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s;
+    color: #000000b7;
   }
   
   .table-container {
@@ -149,7 +146,7 @@ body {
     justify-content: center;
     width: 200px;
     height: 200px;
-    background-color: #409706b7;
+    background-color: #000000b7;
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -160,5 +157,6 @@ body {
   }
   
   .card:hover {
-    background-color: #0056b3;
+    background-color: #fff;
+    color: #000000b7;
   }

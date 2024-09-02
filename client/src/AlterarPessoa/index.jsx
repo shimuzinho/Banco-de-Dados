@@ -16,7 +16,7 @@ export default function UpdatePessoa() {
     const atualizacao = { nome, dataNascimento, nomePai, nomeMae, cpf };
 
     try {
-      const response = await fetch(`http://localhost:5000/matriculas/${id}`, {
+      const response = await fetch(`http://localhost:5000/pessoas/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export default function UpdatePessoa() {
         body: JSON.stringify(atualizacao),
       });
       if (response.ok) {
-        alert('Matrícula atualizada com sucesso!');
+        alert('Pessoa atualizada com sucesso!');
         navigate("/pessoas");
       } else {
         alert('Erro ao atualizar pessoa.');
@@ -40,7 +40,7 @@ export default function UpdatePessoa() {
       <h2>Atualizar Matrícula</h2>
       <input
         type="text"
-        placeholder="CPF da Pessoa"
+        placeholder="Id"
         value={id}
         onChange={(e) => setId(e.target.value)}
         required
@@ -72,6 +72,14 @@ export default function UpdatePessoa() {
         onChange={(e) => setNomeMae(e.target.value)}
         required
       />
+      <input
+        type="number"
+        placeholder='CPF'
+        value={cpf}
+        onChange={(e) => setCpf(e.target.value)}
+        required
+      >
+      </input>
       <button type="submit">Atualizar Registro</button>
     </form>
     </div>
